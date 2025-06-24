@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asistente Virtual CSV</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: "Roboto", sans-serif;
+      background: linear-gradient(135deg, #cbcbcb 0%, #b8befe 100%);
+      color: #333;
+      min-height: 100vh;
+    }
+
+    .message { margin: 10px 0; }
+    .user { color: blue; }
+    .bot { color: green; }
+    #inputForm { margin-top: 10px; }
+    #userInput { width: 80%; padding: 8px; }
+    #sendBtn { padding: 8px 12px; }
+    #chatbox { border: 1px solid #ccc; padding: 10px; height: 400px; overflow-y: auto; }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 20px;
+    }
+
+    .container {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      width: 100%;
+      max-width: 1000px;
+      text-align: center;
+      animation: fadeIn 0.6s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      color: #4c51bf;
+      margin-bottom: 30px;
+      font-weight: 700;
+      font-size: 2.5em;
+    }
+
+    .upload-section {
+      background: #f8f9ff;
+      padding: 30px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+      border: 2px dashed #c3c6e8;
+      transition: all 0.3s ease;
+    }
+
+    .upload-section:hover {
+      border-color: #4c51bf;
+      background: #f0f1ff;
+    }
+
+    .file-input-wrapper {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    input[type="file"] {
+      position: absolute;
+      left: -9999px;
+    }
+
+    .file-label {
+      display: block;
+      width: 100%;
+      padding: 15px 20px;
+      background: #4c51bf;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border: none;
+      font-size: 16px;
+    }
+
+    .file-label:hover {
+      background: #5a67d8;
+      transform: translateY(-2px);
+    }
+
+    .file-info {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 15px 20px;
+      margin: 15px 0;
+      border-radius: 10px;
+      border: 2px solid #e2e8f0;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      background: white;
+    }
+
+    input[type="text"]:focus {
+      outline: none;
+      border-color: #4c51bf;
+      box-shadow: 0 0 0 3px rgba(76, 81, 191, 0.1);
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #4c51bf 0%, #5a67d8 100%);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      margin: 10px 5px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(76, 81, 191, 0.3);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(76, 81, 191, 0.4);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn:disabled {
+      background: #cbd5e0;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .status-message {
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 10px;
+      font-weight: 500;
+      animation: slideIn 0.3s ease;
+    }
+
+    .status-success {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+
+    .status-error {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+
+    .status-info {
+      background: #cce7ff;
+      color: #0c5460;
+      border: 1px solid #b8daff;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .question-section {
+      background: #f8f9ff;
+      padding: 30px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+    }
+
+    .respuesta-box {
+      background: #ffffff;
+      border: 2px solid #e2e8f0;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 15px;
+      min-height: 60px;
+      max-height: 500px;
+      overflow-y: auto;
+      text-align: left;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      font-style: italic;
+    }
+
+    .loading::after {
+      content: '';
+      width: 20px;
+      height: 20px;
+      border: 2px solid #4c51bf;
+      border-top: 2px solid transparent;
+      border-radius: 50%;
+      margin-left: 10px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 15px 0;
+      font-size: 14px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th {
+      background: linear-gradient(135deg, #4c51bf 0%, #5a67d8 100%);
+      color: white;
+      padding: 12px 8px;
+      font-weight: 500;
+      text-align: left;
+    }
+
+    td {
+      border-bottom: 1px solid #e2e8f0;
+      padding: 10px 8px;
+      text-align: left;
+      word-break: break-word;
+    }
+
+    tr:nth-child(even) {
+      background: #f8f9ff;
+    }
+
+    tr:hover {
+      background: #f0f1ff;
+    }
+
+    .tabla-resultados {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 15px 0;
+      font-size: 14px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .tabla-resultados th {
+      background: linear-gradient(135deg, #4c51bf 0%, #5a67d8 100%);
+      color: white;
+      padding: 12px 8px;
+      font-weight: 500;
+    }
+
+    .tabla-resultados td {
+      border-bottom: 1px solid #e2e8f0;
+      padding: 10px 8px;
+      word-break: break-word;
+    }
+
+    .tabla-resultados tr:nth-child(even) {
+      background: #f8f9ff;
+    }
+
+    .examples {
+      background: #f0f1ff;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    .examples h4 {
+      margin-top: 0;
+      color: #4c51bf;
+    }
+
+    .examples ul {
+      margin: 10px 0;
+      padding-left: 20px;
+    }
+
+    .examples li {
+      margin: 5px 0;
+      color: #666;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+        margin: 10px;
+      }
+      
+      h1 {
+        font-size: 2em;
+      }
+      
+      .upload-section,
+      .question-section {
+        padding: 20px;
+      }
+      
+      table, .tabla-resultados {
+        font-size: 12px;
+      }
+      
+      th, td {
+        padding: 8px 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Asistente de Datos</h1>
+
+    <!-- Sección de carga -->
+    <div class="upload-section">
+      <div class="file-input-wrapper">
+        <input type="file" id="csvInput" accept=".csv" />
+        <label for="csvInput" class="file-label">
+          📄 Seleccionar archivo CSV
+        </label>
+      </div>
+      <div class="file-info">
+        Formatos soportados: CSV con separadores: , ; | tab
+      </div>
+      <button class="btn" onclick="subirCSV()" id="uploadBtn">
+        ⬆ Subir CSV
+      </button>
+      <div id="resultadoSubida"></div>
+    </div>
+
+    <!-- Sección de preguntas -->
+    <div class="question-section">
+      <h3>Hacer preguntas sobre tus datos</h3>
+      <input 
+        type="text" 
+        id="pregunta" 
+        placeholder="Ejemplo: ¿Cuáles son las primeras 5 filas? "
+        maxlength="500"
+      />
+      <button class="btn" onclick="enviarPregunta()" id="askBtn" disabled>
+        🔍 Preguntar
+      </button>
+    
+
+    <!-- Sección de respuestas -->
+    <div class="respuesta-box">
+      <strong>🤖 Respuesta:</strong>
+      <div id="respuesta">
+        <p style="color: #666; font-style: italic;">
+          Haz una pregunta para comenzar...
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let csvLoaded = false;
+
+    async function subirCSV() {
+      const input = document.getElementById('csvInput');
+      const resultadoSubida = document.getElementById('resultadoSubida');
+      const uploadBtn = document.getElementById('uploadBtn');
+      const askBtn = document.getElementById('askBtn');
+      
+      if (input.files.length === 0) {
+        showMessage('Selecciona un archivo CSV', 'error');
+        return;
+      }
+
+      const file = input.files[0];
+      
+      // Validar tamaño del archivo (máximo 10MB)
+      if (file.size > 10 * 1024 * 1024) {
+        showMessage('El archivo es demasiado grande. Máximo 10MB permitido.', 'error');
+        return;
+      }
+
+      // Validar extensión
+      if (!file.name.toLowerCase().endsWith('.csv')) {
+        showMessage('Por favor, selecciona un archivo CSV válido.', 'error');
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append('file', file);
+
+      // Mostrar estado de carga
+      uploadBtn.disabled = true;
+      uploadBtn.textContent = '⏳ Subiendo...';
+      resultadoSubida.innerHTML = '<div class="status-message status-info">📤 Subiendo archivo...</div>';
+
+      try {
+        const res = await fetch('/upload_csv', {
+          method: 'POST',
+          body: formData
+        });
+
+        const data = await res.json();
+        
+        if (data.success) {
+          csvLoaded = true;
+          askBtn.disabled = false;
+          showMessage(
+            `✅ CSV cargado exitosamente<br>
+            📊 <strong>${data.rows}</strong> filas, <strong>${data.columns.length}</strong> columnas<br>
+            📋 Columnas: ${data.columns.join(', ')}`, 
+            'success'
+          );
+          
+          // Actualizar respuesta inicial
+          document.getElementById('respuesta').innerHTML = 
+            `<p style="color: #4c51bf; font-weight: 500;">
+              ¡Perfecto! Tu CSV está listo. Ahora puedes hacer preguntas sobre tus datos.
+            </p>`;
+        } else {
+          showMessage(`❌ Error: ${data.message}`, 'error');
+        }
+      } catch (error) {
+        showMessage(`❌ Error de conexión: ${error.message}`, 'error');
+      } finally {
+        uploadBtn.disabled = false;
+        uploadBtn.textContent = '⬆️ Subir CSV';
+      }
+    }
+
+    async function enviarPregunta() {
+      const preguntaInput = document.getElementById('pregunta');
+      const respuestaDiv = document.getElementById('respuesta');
+      const askBtn = document.getElementById('askBtn');
+
+      const pregunta = preguntaInput.value.trim();
+      if (!pregunta) {
+        showMessage('Por favor, escribe una pregunta', 'error');
+        return;
+      }
+
+      if (!csvLoaded) {
+        showMessage('Primero debes cargar un archivo CSV', 'error');
+        return;
+      }
+
+      // Mostrar estado de carga
+      askBtn.disabled = true;
+      askBtn.textContent = '🤔 Pensando...';
+      respuestaDiv.innerHTML = '<div class="loading">Analizando tus datos</div>';
+
+      try {
+        const res = await fetch('/ask', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ question: pregunta })
+        });
+
+        const data = await res.json();
+
+        if (data.success) {
+          // Limpiar y mostrar respuesta
+          respuestaDiv.innerHTML = data.answer;
+          
+          // Limpiar input
+          preguntaInput.value = '';
+        } else {
+          respuestaDiv.innerHTML = `<div class="status-message status-error">❌ ${data.answer}</div>`;
+        }
+      } catch (error) {
+        respuestaDiv.innerHTML = `<div class="status-message status-error">❌ Error de conexión: ${error.message}</div>`;
+      } finally {
+        askBtn.disabled = false;
+        askBtn.textContent = '🔍 Preguntar';
+      }
+    }
+
+    function showMessage(message, type) {
+      const resultadoSubida = document.getElementById('resultadoSubida');
+      const className = type === 'success' ? 'status-success' : 
+                      type === 'error' ? 'status-error' : 'status-info';
+      
+      resultadoSubida.innerHTML = `<div class="status-message ${className}">${message}</div>`;
+    }
+
+    // Permitir enviar pregunta con Enter
+    document.getElementById('pregunta').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        enviarPregunta();
+      }
+    });
+
+    // Actualizar label del archivo cuando se selecciona
+    document.getElementById('csvInput').addEventListener('change', function() {
+      const label = document.querySelector('.file-label');
+      if (this.files.length > 0) {
+        const fileName = this.files[0].name;
+        const fileSize = (this.files[0].size / 1024 / 1024).toFixed(2);
+        label.textContent = `📄 ${fileName} (${fileSize} MB)`;
+      } else {
+        label.textContent = '📄 Seleccionar archivo CSV';
+      }
+    });
+  </script>
+</body>
+</html>
