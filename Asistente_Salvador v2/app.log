@@ -1,0 +1,262 @@
+2025-07-01 11:34:11,534 - __main__ - ERROR - GROQ_API_KEY no está configurada en las variables de entorno
+2025-07-01 11:38:04,713 - __main__ - ERROR - GROQ_API_KEY no está configurada en las variables de entorno
+2025-07-01 11:39:02,170 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.97:5000
+2025-07-01 11:39:02,170 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-01 11:39:06,249 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 11:39:06] "GET / HTTP/1.1" 200 -
+2025-07-01 11:39:06,302 - __main__ - WARNING - Intento de acceso a ruta no existente: /favicon.ico
+2025-07-01 11:39:06,305 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 11:39:06] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-01 11:55:27,437 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 11:55:27] "[36mGET / HTTP/1.1[0m" 304 -
+2025-07-01 11:56:39,986 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 11:56:39] "[36mGET / HTTP/1.1[0m" 304 -
+2025-07-01 11:56:56,283 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 11:56:56] "[36mGET / HTTP/1.1[0m" 304 -
+2025-07-01 11:59:18,029 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.97:5000
+2025-07-01 11:59:18,029 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-01 11:59:22,224 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 11:59:22] "[33mGET / HTTP/1.1[0m" 404 -
+2025-07-01 11:59:24,566 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 11:59:24] "[33mGET / HTTP/1.1[0m" 404 -
+2025-07-01 11:59:31,073 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 11:59:31] "[33mGET / HTTP/1.1[0m" 404 -
+2025-07-01 11:59:38,805 - werkzeug - INFO - 127.0.0.1 - - [01/Jul/2025 11:59:38] "[33mGET / HTTP/1.1[0m" 404 -
+2025-07-01 11:59:38,839 - werkzeug - INFO - 127.0.0.1 - - [01/Jul/2025 11:59:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-01 12:00:55,564 - werkzeug - INFO - 127.0.0.1 - - [01/Jul/2025 12:00:55] "[33mGET / HTTP/1.1[0m" 404 -
+2025-07-01 12:01:42,259 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.97:5000
+2025-07-01 12:01:42,259 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-01 12:01:44,778 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 12:01:44] "GET / HTTP/1.1" 200 -
+2025-07-01 12:04:59,671 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 12:04:59] "[36mGET / HTTP/1.1[0m" 304 -
+2025-07-01 12:08:16,296 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.97:5000
+2025-07-01 12:08:16,296 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-01 12:08:19,025 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 12:08:19] "[36mGET / HTTP/1.1[0m" 304 -
+2025-07-01 12:22:59,971 - __main__ - INFO - Iniciando en modo producción
+2025-07-01 12:22:59,982 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.97:5000
+2025-07-01 12:22:59,982 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-01 12:23:05,072 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 12:23:05] "[36mGET / HTTP/1.1[0m" 304 -
+2025-07-01 12:32:08,002 - __main__ - INFO - Iniciando en modo producción
+2025-07-01 12:32:08,014 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.97:5000
+2025-07-01 12:32:08,015 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-01 12:32:41,871 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 12:32:41] "GET / HTTP/1.1" 200 -
+2025-07-01 12:32:46,696 - __main__ - INFO - Intento de subida desde IP: 192.168.1.97
+2025-07-01 12:32:46,698 - __main__ - INFO - Archivo recibido: dataset jugadores euro.csv
+2025-07-01 12:32:46,698 - __main__ - INFO - Archivo leído: 49009 bytes
+2025-07-01 12:32:46,711 - __main__ - INFO - Archivo decodificado exitosamente con utf-8-sig
+2025-07-01 12:32:46,715 - __main__ - INFO - Contenido validado, procesando CSV...
+2025-07-01 12:32:46,728 - __main__ - INFO - CSV procesado con separador ',': 623 filas, 10 columnas
+2025-07-01 12:32:46,738 - __main__ - INFO - CSV procesado exitosamente: 623 filas, 10 columnas
+2025-07-01 12:32:46,741 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 12:32:46] "POST /upload_csv HTTP/1.1" 200 -
+2025-07-01 12:32:53,117 - __main__ - ERROR - Error HTTP en API Groq: 401 Client Error: Unauthorized for url: https://api.groq.com/openai/v1/chat/completions
+2025-07-01 12:32:53,118 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 12:32:53] "POST /ask HTTP/1.1" 200 -
+2025-07-01 12:41:40,697 - __main__ - INFO - Iniciando en modo producción
+2025-07-01 12:41:40,709 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.97:5000
+2025-07-01 12:41:40,709 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-01 12:41:43,489 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 12:41:43] "[36mGET / HTTP/1.1[0m" 304 -
+2025-07-01 12:41:50,711 - __main__ - INFO - Intento de subida desde IP: 192.168.1.97
+2025-07-01 12:41:50,714 - __main__ - INFO - Archivo recibido: dataset jugadores euro.csv
+2025-07-01 12:41:50,714 - __main__ - INFO - Archivo leído: 49009 bytes
+2025-07-01 12:41:50,716 - __main__ - INFO - Archivo decodificado exitosamente con utf-8-sig
+2025-07-01 12:41:50,719 - __main__ - INFO - Contenido validado, procesando CSV...
+2025-07-01 12:41:50,725 - __main__ - INFO - CSV procesado con separador ',': 623 filas, 10 columnas
+2025-07-01 12:41:50,732 - __main__ - INFO - CSV procesado exitosamente: 623 filas, 10 columnas
+2025-07-01 12:41:50,735 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 12:41:50] "POST /upload_csv HTTP/1.1" 200 -
+2025-07-01 12:41:57,914 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 12:41:57] "POST /ask HTTP/1.1" 200 -
+2025-07-01 12:46:09,424 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 12:46:09] "GET / HTTP/1.1" 200 -
+2025-07-01 12:46:09,590 - __main__ - WARNING - Intento de acceso a ruta no existente: /favicon.ico
+2025-07-01 12:46:09,591 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 12:46:09] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-01 12:46:14,389 - __main__ - INFO - Intento de subida desde IP: 192.168.1.97
+2025-07-01 12:46:14,390 - __main__ - INFO - Archivo recibido: dataset jugadores euro.csv
+2025-07-01 12:46:14,390 - __main__ - INFO - Archivo leído: 49009 bytes
+2025-07-01 12:46:14,391 - __main__ - INFO - Archivo decodificado exitosamente con utf-8-sig
+2025-07-01 12:46:14,392 - __main__ - INFO - Contenido validado, procesando CSV...
+2025-07-01 12:46:14,395 - __main__ - INFO - CSV procesado con separador ',': 623 filas, 10 columnas
+2025-07-01 12:46:14,403 - __main__ - INFO - CSV procesado exitosamente: 623 filas, 10 columnas
+2025-07-01 12:46:14,404 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 12:46:14] "POST /upload_csv HTTP/1.1" 200 -
+2025-07-01 12:46:18,746 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 12:46:18] "POST /ask HTTP/1.1" 200 -
+2025-07-01 12:49:56,919 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 12:49:56] "[36mGET / HTTP/1.1[0m" 304 -
+2025-07-01 12:50:01,715 - __main__ - INFO - Intento de subida desde IP: 192.168.1.97
+2025-07-01 12:50:01,716 - __main__ - INFO - Archivo recibido: dataset jugadores euro.csv
+2025-07-01 12:50:01,716 - __main__ - INFO - Archivo leído: 49009 bytes
+2025-07-01 12:50:01,716 - __main__ - INFO - Archivo decodificado exitosamente con utf-8-sig
+2025-07-01 12:50:01,718 - __main__ - INFO - Contenido validado, procesando CSV...
+2025-07-01 12:50:01,720 - __main__ - INFO - CSV procesado con separador ',': 623 filas, 10 columnas
+2025-07-01 12:50:01,726 - __main__ - INFO - CSV procesado exitosamente: 623 filas, 10 columnas
+2025-07-01 12:50:01,727 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 12:50:01] "POST /upload_csv HTTP/1.1" 200 -
+2025-07-01 12:51:29,722 - __main__ - ERROR - Error escapando HTML: No module named 'bs4'
+2025-07-01 12:51:29,722 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 12:51:29] "POST /ask HTTP/1.1" 200 -
+2025-07-01 12:54:01,027 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 12:54:01] "[36mGET / HTTP/1.1[0m" 304 -
+2025-07-01 12:54:04,872 - __main__ - INFO - Intento de subida desde IP: 192.168.1.97
+2025-07-01 12:54:04,873 - __main__ - INFO - Archivo recibido: dataset jugadores euro.csv
+2025-07-01 12:54:04,873 - __main__ - INFO - Archivo leído: 49009 bytes
+2025-07-01 12:54:04,873 - __main__ - INFO - Archivo decodificado exitosamente con utf-8-sig
+2025-07-01 12:54:04,875 - __main__ - INFO - Contenido validado, procesando CSV...
+2025-07-01 12:54:04,877 - __main__ - INFO - CSV procesado con separador ',': 623 filas, 10 columnas
+2025-07-01 12:54:04,883 - __main__ - INFO - CSV procesado exitosamente: 623 filas, 10 columnas
+2025-07-01 12:54:04,884 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 12:54:04] "POST /upload_csv HTTP/1.1" 200 -
+2025-07-01 12:54:11,380 - __main__ - ERROR - Error escapando HTML: No module named 'bs4'
+2025-07-01 12:54:11,381 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 12:54:11] "POST /ask HTTP/1.1" 200 -
+2025-07-01 12:56:28,966 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 12:56:28] "[36mGET / HTTP/1.1[0m" 304 -
+2025-07-01 12:56:33,756 - __main__ - INFO - Intento de subida desde IP: 192.168.1.97
+2025-07-01 12:56:33,757 - __main__ - INFO - Archivo recibido: dataset jugadores euro.csv
+2025-07-01 12:56:33,758 - __main__ - INFO - Archivo leído: 49009 bytes
+2025-07-01 12:56:33,758 - __main__ - INFO - Archivo decodificado exitosamente con utf-8-sig
+2025-07-01 12:56:33,759 - __main__ - INFO - Contenido validado, procesando CSV...
+2025-07-01 12:56:33,762 - __main__ - INFO - CSV procesado con separador ',': 623 filas, 10 columnas
+2025-07-01 12:56:33,768 - __main__ - INFO - CSV procesado exitosamente: 623 filas, 10 columnas
+2025-07-01 12:56:33,770 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 12:56:33] "POST /upload_csv HTTP/1.1" 200 -
+2025-07-01 12:56:39,742 - __main__ - ERROR - Error escapando HTML: No module named 'bs4'
+2025-07-01 12:56:39,742 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 12:56:39] "POST /ask HTTP/1.1" 200 -
+2025-07-01 12:56:51,846 - __main__ - INFO - Iniciando en modo producción
+2025-07-01 12:56:51,857 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.97:5000
+2025-07-01 12:56:51,857 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-01 12:56:53,942 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 12:56:53] "[36mGET / HTTP/1.1[0m" 304 -
+2025-07-01 12:56:58,309 - __main__ - INFO - Intento de subida desde IP: 192.168.1.97
+2025-07-01 12:56:58,311 - __main__ - INFO - Archivo recibido: dataset jugadores euro.csv
+2025-07-01 12:56:58,311 - __main__ - INFO - Archivo leído: 49009 bytes
+2025-07-01 12:56:58,313 - __main__ - INFO - Archivo decodificado exitosamente con utf-8-sig
+2025-07-01 12:56:58,315 - __main__ - INFO - Contenido validado, procesando CSV...
+2025-07-01 12:56:58,321 - __main__ - INFO - CSV procesado con separador ',': 623 filas, 10 columnas
+2025-07-01 12:56:58,327 - __main__ - INFO - CSV procesado exitosamente: 623 filas, 10 columnas
+2025-07-01 12:56:58,329 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 12:56:58] "POST /upload_csv HTTP/1.1" 200 -
+2025-07-01 12:57:04,337 - __main__ - ERROR - Error escapando HTML: No module named 'bs4'
+2025-07-01 12:57:04,338 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 12:57:04] "POST /ask HTTP/1.1" 200 -
+2025-07-01 12:57:24,688 - __main__ - ERROR - Error escapando HTML: No module named 'bs4'
+2025-07-01 12:57:24,688 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 12:57:24] "POST /ask HTTP/1.1" 200 -
+2025-07-01 13:01:05,287 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 13:01:05] "[36mGET / HTTP/1.1[0m" 304 -
+2025-07-01 13:01:08,795 - __main__ - INFO - Intento de subida desde IP: 192.168.1.97
+2025-07-01 13:01:08,796 - __main__ - INFO - Archivo recibido: dataset jugadores euro.csv
+2025-07-01 13:01:08,796 - __main__ - INFO - Archivo leído: 49009 bytes
+2025-07-01 13:01:08,796 - __main__ - INFO - Archivo decodificado exitosamente con utf-8-sig
+2025-07-01 13:01:08,798 - __main__ - INFO - Contenido validado, procesando CSV...
+2025-07-01 13:01:08,801 - __main__ - INFO - CSV procesado con separador ',': 623 filas, 10 columnas
+2025-07-01 13:01:08,808 - __main__ - INFO - CSV procesado exitosamente: 623 filas, 10 columnas
+2025-07-01 13:01:08,809 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 13:01:08] "POST /upload_csv HTTP/1.1" 200 -
+2025-07-01 13:01:15,989 - __main__ - ERROR - Error escapando HTML: No module named 'bs4'
+2025-07-01 13:01:15,990 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 13:01:15] "POST /ask HTTP/1.1" 200 -
+2025-07-01 13:07:08,645 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 13:07:08] "GET / HTTP/1.1" 200 -
+2025-07-01 13:07:14,509 - __main__ - INFO - Intento de subida desde IP: 192.168.1.97
+2025-07-01 13:07:14,510 - __main__ - INFO - Archivo recibido: dataset jugadores euro.csv
+2025-07-01 13:07:14,510 - __main__ - INFO - Archivo leído: 49009 bytes
+2025-07-01 13:07:14,510 - __main__ - INFO - Archivo decodificado exitosamente con utf-8-sig
+2025-07-01 13:07:14,512 - __main__ - INFO - Contenido validado, procesando CSV...
+2025-07-01 13:07:14,514 - __main__ - INFO - CSV procesado con separador ',': 623 filas, 10 columnas
+2025-07-01 13:07:14,521 - __main__ - INFO - CSV procesado exitosamente: 623 filas, 10 columnas
+2025-07-01 13:07:14,522 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 13:07:14] "POST /upload_csv HTTP/1.1" 200 -
+2025-07-01 13:07:20,503 - __main__ - ERROR - Error escapando HTML: No module named 'bs4'
+2025-07-01 13:07:20,503 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 13:07:20] "POST /ask HTTP/1.1" 200 -
+2025-07-01 13:07:58,867 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 13:07:58] "GET / HTTP/1.1" 200 -
+2025-07-01 13:08:54,159 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 13:08:54] "GET / HTTP/1.1" 200 -
+2025-07-01 13:08:58,456 - __main__ - INFO - Intento de subida desde IP: 192.168.1.97
+2025-07-01 13:08:58,457 - __main__ - INFO - Archivo recibido: dataset jugadores euro.csv
+2025-07-01 13:08:58,458 - __main__ - INFO - Archivo leído: 49009 bytes
+2025-07-01 13:08:58,458 - __main__ - INFO - Archivo decodificado exitosamente con utf-8-sig
+2025-07-01 13:08:58,459 - __main__ - INFO - Contenido validado, procesando CSV...
+2025-07-01 13:08:58,462 - __main__ - INFO - CSV procesado con separador ',': 623 filas, 10 columnas
+2025-07-01 13:08:58,469 - __main__ - INFO - CSV procesado exitosamente: 623 filas, 10 columnas
+2025-07-01 13:08:58,471 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 13:08:58] "POST /upload_csv HTTP/1.1" 200 -
+2025-07-01 13:09:05,241 - __main__ - ERROR - Error escapando HTML: No module named 'bs4'
+2025-07-01 13:09:05,242 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 13:09:05] "POST /ask HTTP/1.1" 200 -
+2025-07-01 13:12:29,430 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 13:12:29] "GET / HTTP/1.1" 200 -
+2025-07-01 13:12:35,524 - __main__ - INFO - Intento de subida desde IP: 192.168.1.97
+2025-07-01 13:12:35,525 - __main__ - INFO - Archivo recibido: dataset jugadores euro.csv
+2025-07-01 13:12:35,526 - __main__ - INFO - Archivo leído: 49009 bytes
+2025-07-01 13:12:35,526 - __main__ - INFO - Archivo decodificado exitosamente con utf-8-sig
+2025-07-01 13:12:35,528 - __main__ - INFO - Contenido validado, procesando CSV...
+2025-07-01 13:12:35,530 - __main__ - INFO - CSV procesado con separador ',': 623 filas, 10 columnas
+2025-07-01 13:12:35,539 - __main__ - INFO - CSV procesado exitosamente: 623 filas, 10 columnas
+2025-07-01 13:12:35,540 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 13:12:35] "POST /upload_csv HTTP/1.1" 200 -
+2025-07-01 13:12:44,184 - __main__ - ERROR - Error escapando HTML: No module named 'bs4'
+2025-07-01 13:12:44,184 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 13:12:44] "POST /ask HTTP/1.1" 200 -
+2025-07-01 13:17:55,375 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 13:17:55] "[36mGET / HTTP/1.1[0m" 304 -
+2025-07-01 13:17:59,701 - __main__ - INFO - Intento de subida desde IP: 192.168.1.97
+2025-07-01 13:17:59,702 - __main__ - INFO - Archivo recibido: dataset jugadores euro.csv
+2025-07-01 13:17:59,702 - __main__ - INFO - Archivo leído: 49009 bytes
+2025-07-01 13:17:59,702 - __main__ - INFO - Archivo decodificado exitosamente con utf-8-sig
+2025-07-01 13:17:59,704 - __main__ - INFO - Contenido validado, procesando CSV...
+2025-07-01 13:17:59,706 - __main__ - INFO - CSV procesado con separador ',': 623 filas, 10 columnas
+2025-07-01 13:17:59,712 - __main__ - INFO - CSV procesado exitosamente: 623 filas, 10 columnas
+2025-07-01 13:17:59,713 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 13:17:59] "POST /upload_csv HTTP/1.1" 200 -
+2025-07-01 13:18:08,191 - __main__ - ERROR - Error escapando HTML: No module named 'bs4'
+2025-07-01 13:18:08,191 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 13:18:08] "POST /ask HTTP/1.1" 200 -
+2025-07-01 13:20:03,451 - __main__ - INFO - Iniciando en modo producción
+2025-07-01 13:20:03,462 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.97:5000
+2025-07-01 13:20:03,462 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-01 13:20:05,695 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 13:20:05] "[36mGET / HTTP/1.1[0m" 304 -
+2025-07-01 13:20:10,512 - __main__ - INFO - Intento de subida desde IP: 192.168.1.97
+2025-07-01 13:20:10,514 - __main__ - INFO - Archivo recibido: dataset jugadores euro.csv
+2025-07-01 13:20:10,514 - __main__ - INFO - Archivo leído: 49009 bytes
+2025-07-01 13:20:10,516 - __main__ - INFO - Archivo decodificado exitosamente con utf-8-sig
+2025-07-01 13:20:10,518 - __main__ - INFO - Contenido validado, procesando CSV...
+2025-07-01 13:20:10,523 - __main__ - INFO - CSV procesado con separador ',': 623 filas, 10 columnas
+2025-07-01 13:20:10,529 - __main__ - INFO - CSV procesado exitosamente: 623 filas, 10 columnas
+2025-07-01 13:20:10,531 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 13:20:10] "POST /upload_csv HTTP/1.1" 200 -
+2025-07-01 13:20:15,837 - __main__ - ERROR - Error escapando HTML: No module named 'bs4'
+2025-07-01 13:20:15,837 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 13:20:15] "POST /ask HTTP/1.1" 200 -
+2025-07-01 13:20:39,162 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 13:20:39] "GET / HTTP/1.1" 200 -
+2025-07-01 13:26:37,190 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 13:26:37] "[36mGET / HTTP/1.1[0m" 304 -
+2025-07-01 13:36:00,873 - __main__ - INFO - Intento de subida desde IP: 192.168.1.97
+2025-07-01 13:36:00,879 - __main__ - INFO - Archivo recibido: _annotations.csv
+2025-07-01 13:36:00,880 - __main__ - INFO - Archivo leído: 983516 bytes
+2025-07-01 13:36:00,881 - __main__ - INFO - Archivo decodificado exitosamente con utf-8-sig
+2025-07-01 13:36:00,907 - __main__ - INFO - Contenido validado, procesando CSV...
+2025-07-01 13:36:00,922 - __main__ - INFO - CSV procesado con separador ',': 10683 filas, 8 columnas
+2025-07-01 13:36:00,932 - __main__ - INFO - CSV procesado exitosamente: 10683 filas, 8 columnas
+2025-07-01 13:36:00,934 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 13:36:00] "POST /upload_csv HTTP/1.1" 200 -
+2025-07-01 13:36:15,565 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 13:36:15] "[36mGET / HTTP/1.1[0m" 304 -
+2025-07-01 13:36:20,169 - __main__ - INFO - Intento de subida desde IP: 192.168.1.97
+2025-07-01 13:36:20,173 - __main__ - INFO - Archivo recibido: _annotations.csv
+2025-07-01 13:36:20,173 - __main__ - INFO - Archivo leído: 983516 bytes
+2025-07-01 13:36:20,174 - __main__ - INFO - Archivo decodificado exitosamente con utf-8-sig
+2025-07-01 13:36:20,200 - __main__ - INFO - Contenido validado, procesando CSV...
+2025-07-01 13:36:20,216 - __main__ - INFO - CSV procesado con separador ',': 10683 filas, 8 columnas
+2025-07-01 13:36:20,227 - __main__ - INFO - CSV procesado exitosamente: 10683 filas, 8 columnas
+2025-07-01 13:36:20,229 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 13:36:20] "POST /upload_csv HTTP/1.1" 200 -
+2025-07-01 13:36:31,235 - __main__ - ERROR - Error escapando HTML: No module named 'bs4'
+2025-07-01 13:36:31,236 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 13:36:31] "POST /ask HTTP/1.1" 200 -
+2025-07-01 13:36:52,469 - __main__ - INFO - Intento de subida desde IP: 192.168.1.97
+2025-07-01 13:36:52,469 - __main__ - INFO - Archivo recibido: data.csv
+2025-07-01 13:36:52,470 - __main__ - INFO - Archivo leído: 3165 bytes
+2025-07-01 13:36:52,470 - __main__ - INFO - Archivo decodificado exitosamente con utf-8-sig
+2025-07-01 13:36:52,470 - __main__ - INFO - Contenido validado, procesando CSV...
+2025-07-01 13:36:52,472 - __main__ - INFO - CSV procesado con separador ',': 100 filas, 6 columnas
+2025-07-01 13:36:52,474 - __main__ - INFO - CSV procesado exitosamente: 100 filas, 6 columnas
+2025-07-01 13:36:52,475 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 13:36:52] "POST /upload_csv HTTP/1.1" 200 -
+2025-07-01 13:36:59,470 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 13:36:59] "POST /ask HTTP/1.1" 200 -
+2025-07-01 13:40:36,062 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 13:40:36] "GET / HTTP/1.1" 200 -
+2025-07-01 13:43:00,141 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 13:43:00] "[36mGET / HTTP/1.1[0m" 304 -
+2025-07-01 13:43:20,548 - __main__ - INFO - Intento de subida desde IP: 192.168.1.97
+2025-07-01 13:43:20,549 - __main__ - INFO - Archivo recibido: archivo_malicioso.csv
+2025-07-01 13:43:20,549 - __main__ - INFO - Archivo leído: 186 bytes
+2025-07-01 13:43:20,549 - __main__ - INFO - Archivo decodificado exitosamente con utf-8-sig
+2025-07-01 13:43:20,550 - __main__ - WARNING - Archivo rechazado: Contenido no válido detectado
+2025-07-01 13:43:20,550 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 13:43:20] "[31m[1mPOST /upload_csv HTTP/1.1[0m" 400 -
+2025-07-01 13:47:28,506 - __main__ - INFO - Intento de subida desde IP: 192.168.1.97
+2025-07-01 13:47:28,507 - __main__ - INFO - Archivo recibido: dataset jugadores euro.csv
+2025-07-01 13:47:28,507 - __main__ - INFO - Archivo leído: 49009 bytes
+2025-07-01 13:47:28,507 - __main__ - INFO - Archivo decodificado exitosamente con utf-8-sig
+2025-07-01 13:47:28,509 - __main__ - INFO - Contenido validado, procesando CSV...
+2025-07-01 13:47:28,511 - __main__ - INFO - CSV procesado con separador ',': 623 filas, 10 columnas
+2025-07-01 13:47:28,517 - __main__ - INFO - CSV procesado exitosamente: 623 filas, 10 columnas
+2025-07-01 13:47:28,518 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 13:47:28] "POST /upload_csv HTTP/1.1" 200 -
+2025-07-01 13:47:31,546 - __main__ - WARNING - Pregunta maliciosa detectada: ¿Qué pasa si escribo esto?'; DROP TABLE usuarios; --
+2025-07-01 13:47:31,546 - werkzeug - INFO - 192.168.1.97 - - [01/Jul/2025 13:47:31] "[31m[1mPOST /ask HTTP/1.1[0m" 400 -

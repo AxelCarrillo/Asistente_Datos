@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asistente Virtual CSV</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: "Roboto", sans-serif;
+      background: linear-gradient(135deg, #cbcbcb 0%, #b8befe 100%);
+      color: #333;
+      min-height: 100vh;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 20px;
+    }
+
+    .container {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      width: 100%;
+      max-width: 1000px;
+      text-align: center;
+      animation: fadeIn 0.6s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      color: #4c51bf;
+      margin-bottom: 30px;
+      font-weight: 700;
+      font-size: 2.5em;
+    }
+
+    .upload-section {
+      background: #f8f9ff;
+      padding: 30px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+      border: 2px dashed #c3c6e8;
+      transition: all 0.3s ease;
+    }
+
+    .upload-section:hover {
+      border-color: #4c51bf;
+      background: #f0f1ff;
+    }
+
+    .file-input-wrapper {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    input[type="file"] {
+      position: absolute;
+      left: -9999px;
+    }
+
+    .file-label {
+      display: block;
+      width: 100%;
+      padding: 15px 20px;
+      background: #4c51bf;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border: none;
+      font-size: 16px;
+    }
+
+    .file-label:hover {
+      background: #5a67d8;
+      transform: translateY(-2px);
+    }
+
+    .file-info {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 15px 20px;
+      margin: 15px 0;
+      border-radius: 10px;
+      border: 2px solid #e2e8f0;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      background: white;
+    }
+
+    input[type="text"]:focus {
+      outline: none;
+      border-color: #4c51bf;
+      box-shadow: 0 0 0 3px rgba(76, 81, 191, 0.1);
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #4c51bf 0%, #5a67d8 100%);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      margin: 10px 5px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(76, 81, 191, 0.3);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(76, 81, 191, 0.4);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn:disabled {
+      background: #cbd5e0;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .status-message {
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 10px;
+      font-weight: 500;
+      animation: slideIn 0.3s ease;
+    }
+
+    .status-success {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+
+    .status-error {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+
+    .status-info {
+      background: #cce7ff;
+      color: #0c5460;
+      border: 1px solid #b8daff;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .question-section {
+      background: #f8f9ff;
+      padding: 30px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+    }
+
+    .respuesta-box {
+      background: #ffffff;
+      border: 2px solid #e2e8f0;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 15px;
+      min-height: 60px;
+      max-height: 500px;
+      overflow-y: auto;
+      text-align: left;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      font-style: italic;
+    }
+
+    .loading::after {
+      content: '';
+      width: 20px;
+      height: 20px;
+      border: 2px solid #4c51bf;
+      border-top: 2px solid transparent;
+      border-radius: 50%;
+      margin-left: 10px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Estilos mejorados para las respuestas del bot */
+    .bot-response {
+      line-height: 1.6;
+      color: #2d3748;
+    }
+
+    .bot-response h3, .bot-response h4 {
+      color: #4c51bf;
+      margin: 20px 0 10px 0;
+      font-weight: 600;
+    }
+
+    .bot-response p {
+      margin: 10px 0;
+      color: #4a5568;
+    }
+
+    .bot-response strong {
+      color: #2b6cb0;
+      font-weight: 600;
+    }
+
+    .bot-response ul, .bot-response ol {
+      margin: 15px 0;
+      padding-left: 25px;
+    }
+
+    .bot-response li {
+      margin: 8px 0;
+      color: #4a5568;
+    }
+
+    /* Contenedor para tablas */
+    .table-container {
+      margin: 20px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      background: white;
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    /* Estilos específicos para tablas del bot */
+    .bot-response-table {
+      border-collapse: collapse !important;
+      width: 100% !important;
+      margin: 0 !important;
+      font-size: 14px !important;
+      border: none !important;
+      background: white !important;
+      font-family: inherit !important;
+    }
+
+    .bot-response-table th {
+      background: linear-gradient(135deg, #4c51bf 0%, #5a67d8 100%) !important;
+      color: white !important;
+      padding: 15px 12px !important;
+      font-weight: 600 !important;
+      text-align: left !important;
+      font-size: 14px !important;
+      border: none !important;
+      text-transform: capitalize !important;
+    }
+
+    .bot-response-table td {
+      border: none !important;
+      border-bottom: 1px solid #e2e8f0 !important;
+      padding: 12px !important;
+      text-align: left !important;
+      color: #4a5568 !important;
+      font-size: 13px !important;
+      vertical-align: top !important;
+    }
+
+    .bot-response-table tbody tr:nth-child(even) {
+      background: #f8f9ff !important;
+    }
+
+    .bot-response-table tbody tr:hover {
+      background: #e6f3ff !important;
+      transition: background-color 0.2s ease !important;
+      cursor: default !important;
+    }
+
+    .bot-response-table tr:last-child td {
+      border-bottom: none !important;
+    }
+
+    /* Números en tablas */
+    .bot-response-table td:nth-child(n+3) {
+      font-family: 'Courier New', monospace !important;
+      font-weight: 500 !important;
+    }
+
+    /* Estilos para headers del bot */
+    .bot-response h4 {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 0;
+      border-bottom: 2px solid #e2e8f0;
+      margin-bottom: 15px !important;
+    }
+
+    /* Estilos para tablas en las respuestas (fallback) */
+    .bot-response table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 20px 0;
+      font-size: 14px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      background: white;
+    }
+
+    .bot-response table th {
+      background: linear-gradient(135deg, #4c51bf 0%, #5a67d8 100%);
+      color: white;
+      padding: 12px 10px;
+      font-weight: 600;
+      text-align: left;
+      font-size: 13px;
+    }
+
+    .bot-response table td {
+      border-bottom: 1px solid #e2e8f0;
+      padding: 10px;
+      text-align: left;
+      word-break: break-word;
+      color: #4a5568;
+    }
+
+    .bot-response table tr:nth-child(even) {
+      background: #f8f9ff;
+    }
+
+    .bot-response table tr:hover {
+      background: #f0f1ff;
+      transition: background-color 0.2s ease;
+    }
+
+    /* Estilos para texto destacado */
+    .bot-response .highlight {
+      background: #fff3cd;
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #856404;
+      font-weight: 500;
+    }
+
+    /* Estilos para códigos o valores numéricos */
+    .bot-response code {
+      background: #f1f5f9;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      color: #1a365d;
+      border: 1px solid #e2e8f0;
+    }
+
+    /* Estilos para secciones de información */
+    .info-card {
+      background: linear-gradient(135deg, #e6fffa 0%, #f0fff4 100%);
+      border: 1px solid #38b2ac;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 15px 0;
+      border-left: 4px solid #38b2ac;
+    }
+
+    .warning-card {
+      background: linear-gradient(135deg, #fffbeb 0%, #fef5e7 100%);
+      border: 1px solid #f6ad55;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 15px 0;
+      border-left: 4px solid #f6ad55;
+    }
+
+    .error-card {
+      background: linear-gradient(135deg, #fed7d7 0%, #feb2b2 100%);
+      border: 1px solid #f56565;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 15px 0;
+      border-left: 4px solid #f56565;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+        margin: 10px;
+      }
+      
+      h1 {
+        font-size: 2em;
+      }
+      
+      .upload-section,
+      .question-section {
+        padding: 20px;
+      }
+      
+      .bot-response table {
+        font-size: 12px;
+      }
+      
+      .bot-response table th,
+      .bot-response table td {
+        padding: 8px 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Asistente de Datos</h1>
+
+    <!-- Sección de carga -->
+    <div class="upload-section">
+      <div class="file-input-wrapper">
+        <input type="file" id="csvInput" name="file" accept=".csv" />
+        <label for="csvInput" class="file-label">
+          📄 Seleccionar archivo CSV
+        </label>
+      </div>
+      <div class="file-info">
+        Formatos soportados: CSV con separadores: , ; | tab
+      </div>
+      <button class="btn" onclick="subirCSV()" id="uploadBtn">
+        ⬆ Subir CSV
+      </button>
+      <div id="resultadoSubida"></div>
+    </div>
+
+    <!-- Sección de preguntas -->
+    <div class="question-section">
+      <h3>Hacer preguntas sobre tus datos</h3>
+      <input 
+        type="text" 
+        id="pregunta" 
+        placeholder="Ejemplo: ¿Cuáles son las primeras 5 filas?"
+        maxlength="500"
+      />
+      <button class="btn" onclick="enviarPregunta()" id="askBtn" disabled>
+        🔍 Preguntar
+      </button>
+
+    <!-- Sección de respuestas -->
+    <div class="respuesta-box">
+      <strong style="color: #4c51bf;">🤖 Respuesta:</strong>
+      <div id="respuesta" class="bot-response">
+        <p style="color: #666; font-style: italic;">
+          Haz una pregunta para comenzar...
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let csvLoaded = false;
+
+    async function subirCSV() {
+      const input = document.getElementById('csvInput');
+      const resultadoSubida = document.getElementById('resultadoSubida');
+      const uploadBtn = document.getElementById('uploadBtn');
+      const askBtn = document.getElementById('askBtn');
+      
+      if (input.files.length === 0) {
+        showMessage('Selecciona un archivo CSV', 'error');
+        return;
+      }
+
+      const file = input.files[0];
+      
+      // Validar tamaño del archivo (máximo 10MB)
+      if (file.size > 10 * 1024 * 1024) {
+        showMessage('El archivo es demasiado grande. Máximo 10MB permitido.', 'error');
+        return;
+      }
+
+      // Validar extensión
+      if (!file.name.toLowerCase().endsWith('.csv')) {
+        showMessage('Por favor, selecciona un archivo CSV válido.', 'error');
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append('file', file);
+
+      // Mostrar estado de carga
+      uploadBtn.disabled = true;
+      uploadBtn.textContent = '⏳ Subiendo...';
+      resultadoSubida.innerHTML = '<div class="status-message status-info">📤 Subiendo archivo...</div>';
+
+      try {
+        const res = await fetch('/upload_csv', {
+          method: 'POST',
+          body: formData
+        });
+
+        const data = await res.json();
+        
+        if (data.success) {
+          csvLoaded = true;
+          askBtn.disabled = false;
+          showMessage(
+            `✅ CSV cargado exitosamente<br>
+            📊 <strong>${data.rows}</strong> filas, <strong>${data.columns.length}</strong> columnas<br>
+            📋 Columnas: ${data.columns.join(', ')}`, 
+            'success'
+          );
+          
+          // Actualizar respuesta inicial
+          document.getElementById('respuesta').innerHTML = 
+            `<div class="info-card">
+              <p style="color: #2b6cb0; font-weight: 500; margin: 0;">
+                ¡Perfecto! Tu CSV está listo. Ahora puedes hacer preguntas sobre tus datos.
+              </p>
+            </div>`;
+        } else {
+          showMessage(`❌ Error: ${data.message}`, 'error');
+        }
+      } catch (error) {
+        showMessage(`❌ Error de conexión: ${error.message}`, 'error');
+      } finally {
+        uploadBtn.disabled = false;
+        uploadBtn.textContent = '⬆️ Subir CSV';
+      }
+    }
+
+    async function enviarPregunta() {
+      const preguntaInput = document.getElementById('pregunta');
+      const respuestaDiv = document.getElementById('respuesta');
+      const askBtn = document.getElementById('askBtn');
+
+      const pregunta = preguntaInput.value.trim();
+      if (!pregunta) {
+        showMessage('Por favor, escribe una pregunta', 'error');
+        return;
+      }
+
+      if (!csvLoaded) {
+        showMessage('Primero debes cargar un archivo CSV', 'error');
+        return;
+      }
+
+      // Mostrar estado de carga
+      askBtn.disabled = true;
+      askBtn.textContent = '🤔 Pensando...';
+      respuestaDiv.innerHTML = '<div class="loading">Analizando tus datos</div>';
+
+      try {
+        const res = await fetch('/ask', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ question: pregunta })
+        });
+
+        const data = await res.json();
+
+        if (data.success) {
+          // Renderizar HTML directamente desde el backend
+          const processedAnswer = processResponse(data.answer);
+          respuestaDiv.innerHTML = processedAnswer;
+          
+          // Limpiar input
+          preguntaInput.value = '';
+        } else {
+          respuestaDiv.innerHTML = `<div class="error-card">❌ ${data.answer}</div>`;
+        }
+      } catch (error) {
+        respuestaDiv.innerHTML = `<div class="error-card">❌ Error de conexión: ${error.message}</div>`;
+      } finally {
+        askBtn.disabled = false;
+        askBtn.textContent = '🔍 Preguntar';
+      }
+    }
+
+    function processResponse(response) {
+      let processedResponse = response;
+      
+      // Primero, convertir markdown bold (**texto**) a HTML strong
+      processedResponse = processedResponse.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      
+      // Convertir títulos con emojis a headers elegantes
+      processedResponse = processedResponse.replace(/<strong>(🤖.*?)<\/strong>/g, '<h4 style="color: #4c51bf; margin: 0 0 15px 0; font-size: 18px;">$1</h4>');
+      processedResponse = processedResponse.replace(/<strong>(📊.*?)<\/strong>/g, '<h4 style="color: #2b6cb0; margin: 15px 0 10px 0; font-size: 16px;">$1</h4>');
+      processedResponse = processedResponse.replace(/<strong>(📈.*?)<\/strong>/g, '<h4 style="color: #2b6cb0; margin: 15px 0 10px 0; font-size: 16px;">$1</h4>');
+      processedResponse = processedResponse.replace(/<strong>(📋.*?)<\/strong>/g, '<h4 style="color: #2b6cb0; margin: 15px 0 10px 0; font-size: 16px;">$1</h4>');
+      
+      // Mejorar las tablas existentes
+      if (processedResponse.includes('<table')) {
+        // Limpiar atributos innecesarios y agregar clases
+        processedResponse = processedResponse.replace(/<table[^>]*>/g, '<table class="bot-response-table">');
+        
+        // Envolver tabla en contenedor con estilo
+        processedResponse = processedResponse.replace(/(<table.*?<\/table>)/gs, '<div class="table-container">$1</div>');
+        
+        // Limpiar estilos inline de las celdas si existen
+        processedResponse = processedResponse.replace(/style="[^"]*"/g, '');
+      }
+      
+      // Limpiar saltos de línea excesivos y espacios
+      processedResponse = processedResponse.replace(/\n+/g, ' ');
+      processedResponse = processedResponse.replace(/\s+/g, ' ');
+      processedResponse = processedResponse.trim();
+      
+      // Si no hay estructura HTML, crear párrafos
+      if (!processedResponse.includes('<h4') && !processedResponse.includes('<table') && !processedResponse.includes('<div')) {
+        // Dividir por saltos de línea dobles y crear párrafos
+        const paragraphs = processedResponse.split(/\s{2,}/).filter(p => p.trim().length > 0);
+        if (paragraphs.length > 1) {
+          processedResponse = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+        } else {
+          processedResponse = `<p>${processedResponse}</p>`;
+        }
+      }
+      
+      return processedResponse;
+    }
+
+    function showMessage(message, type) {
+      const resultadoSubida = document.getElementById('resultadoSubida');
+      const className = type === 'success' ? 'status-success' : 
+                      type === 'error' ? 'status-error' : 'status-info';
+      
+      resultadoSubida.innerHTML = `<div class="status-message ${className}">${message}</div>`;
+    }
+
+    // Permitir enviar pregunta con Enter
+    document.getElementById('pregunta').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        enviarPregunta();
+      }
+    });
+
+    // Actualizar label del archivo cuando se selecciona
+    document.getElementById('csvInput').addEventListener('change', function() {
+      const label = document.querySelector('.file-label');
+      if (this.files.length > 0) {
+        const fileName = this.files[0].name;
+        const fileSize = (this.files[0].size / 1024 / 1024).toFixed(2);
+        label.textContent = `📄 ${fileName} (${fileSize} MB)`;
+      } else {
+        label.textContent = '📄 Seleccionar archivo CSV';
+      }
+    });
+  </script>
+</body>
+</html>
